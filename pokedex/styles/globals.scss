@@ -14,3 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+.pokeman{
+  display: grid;
+  img{
+    height: 8em;
+  }
+  h2{
+    text-transform: capitalize;
+  }
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
