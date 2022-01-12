@@ -1,10 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
+import PokemonCard from "@components/PokemonCard"
 
 export default function Home({ pokemon }) {
   return (
     <div>
       <h1>Found {pokemon.count} results </h1>
+      <PokemonCard />
       <section className="grid-container">
         {pokemon.results.map((pokeman, index) => {
           return (
@@ -12,7 +14,13 @@ export default function Home({ pokemon }) {
               <Link href={pokeman.name}>
                 <a>
                   <h2>{pokeman.name}</h2>
-                  <img src={pokeman.image} alt={pokeman.name} />
+                  <Image
+                    src={pokeman.image}
+                    alt={pokeman.name}
+                    width={500}
+                    height={500}
+                    layout="responsive"
+                  />
                 </a>
               </Link>
             </div>

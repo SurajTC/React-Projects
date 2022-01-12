@@ -1,7 +1,10 @@
+@import "./theme.scss";
+
 html,
 body {
-  padding: 0;
-  margin: 0;
+  color: $color-fg-primary;
+  background-color: $color-bg-primary;
+  
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -12,10 +15,13 @@ a {
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 .pokeman{
   display: grid;
+
   img{
     height: 8em;
   }
@@ -27,3 +33,9 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+// #ffffff
+// #FF0000
+// #CC0000
+// #3B4CCA
+// #FFDE00
+// #B3A125
