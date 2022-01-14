@@ -4,27 +4,11 @@ import PokemonCard from "@components/PokemonCard"
 
 export default function Home({ pokemon }) {
   return (
-    <div>
+    <div className="container">
       <h1>Found {pokemon.count} results </h1>
-      <PokemonCard />
       <section className="grid-container">
-        {pokemon.results.map((pokeman, index) => {
-          return (
-            <div key={index} className="pokeman">
-              <Link href={pokeman.name}>
-                <a>
-                  <h2>{pokeman.name}</h2>
-                  <Image
-                    src={pokeman.image}
-                    alt={pokeman.name}
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                  />
-                </a>
-              </Link>
-            </div>
-          )
+        {pokemon.results.map((pokemon, index) => {
+          return <PokemonCard key={index} pokemon={pokemon} />
         })}
       </section>
     </div>

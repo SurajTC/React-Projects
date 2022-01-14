@@ -1,9 +1,22 @@
+import Link from "next/link"
 import styles from "@components/PokemonCard.module.scss"
+import Image from "next/image"
 
-export default function PokemonCard() {
+export default function PokemonCard({ pokemon: { name, image } }) {
   return (
-    <div>
-      <h1 className={styles.test}>Pokeman Card</h1>
-    </div>
+    <Link href={"/" + name}>
+      <a className={styles["pokemon--card"]}>
+        <h3 className={styles["pokemon--name"]}>{name}</h3>
+        <Image
+          src={image}
+          alt={name}
+          width={100}
+          height={100}
+          layout="responsive"
+          priority="true"
+        />
+        <h3 className={styles["pokemon--name"]}>Read More</h3>
+      </a>
+    </Link>
   )
 }
