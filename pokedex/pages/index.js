@@ -1,8 +1,13 @@
-import Link from "next/link"
-import Image from "next/image"
 import PokemonCard from "@components/PokemonCard"
 
 export default function Home({ pokemon }) {
+  if (pokemon === undefined) {
+    return (
+      <div className="container">
+        <h1>Falied to Load Data</h1>
+      </div>
+    )
+  }
   return (
     <div className="container">
       <h1>Found {pokemon.count} results </h1>
@@ -17,7 +22,7 @@ export default function Home({ pokemon }) {
 
 export async function getStaticProps() {
   const pokemon = await fetch(
-    "https://pokeapi.co/api/v2/pokemon?offset=0&limit=100"
+    "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10"
   )
     .then((res) => res.json())
     .then((data) => {

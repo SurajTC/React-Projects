@@ -6,21 +6,24 @@
 .pokemon--card{
     display: grid;
     // min-width: min(14rem, 50%);
-    border: .25em solid $color-fg-primary;
+    border: .5em solid $color-fg-primary;
     border-radius: .5em ;
-    color: $color-bg-primary;
     background-color: $color-fg-primary;
+    color: $color-bg-primary;
     overflow: hidden;
-    transition: transform 50ms ease-in-out;
+    transition: background-color 50ms ease-in-out, border 50ms ease-in-out;
     img{
     background-color: $color-bg-primary;
     border-radius: .125em ;
     // padding: .25em !important;
     }
-    box-shadow: .25em .25em .25em  rgba($color: #000000, $alpha: .5);
+    // box-shadow: .25em .25em .25em  rgba($color: #000000, $alpha: .5);
     &:hover{
-    box-shadow: .125em .125em .5em .5em rgba($color: #000000, $alpha: .25);
-    transform: scale(1.06125);
+    // box-shadow: .125em .125em .5em .5em rgba($color: #000000, $alpha: .25);
+    // transform: scale(1.06125);
+    background-color: $color-fg-secondary;
+    border-color: $color-fg-secondary;
+
 
     }
 }
