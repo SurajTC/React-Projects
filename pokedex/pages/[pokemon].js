@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
+import { useEffect } from "react"
 
-export default function Pokeman({ response }) {
+export default function Pokemon({ response, toggleLoading }) {
   const router = useRouter()
+  useEffect(() => toggleLoading(), [response])
 
   return (
     <div className="container">
@@ -47,6 +49,7 @@ export default function Pokeman({ response }) {
       <button
         onClick={() => {
           router.back()
+          toggleLoading()
         }}
       >
         Back

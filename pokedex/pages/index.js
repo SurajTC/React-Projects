@@ -1,6 +1,11 @@
 import PokemonCard from "@components/PokemonCard"
+import { useEffect } from "react"
 
-export default function Home({ pokemon }) {
+export default function Home({ pokemon, toggleLoading }) {
+  useEffect(() => {
+    toggleLoading()
+  }, [])
+
   if (pokemon === undefined) {
     return (
       <div className="container">
@@ -13,7 +18,13 @@ export default function Home({ pokemon }) {
       <h1>Found {pokemon.count} results </h1>
       <section className="grid-container">
         {pokemon.results.map((pokemon, index) => {
-          return <PokemonCard key={index} pokemon={pokemon} />
+          return (
+            <PokemonCard
+              key={index}
+              pokemon={pokemon}
+              toggleLoading={toggleLoading}
+            />
+          )
         })}
       </section>
     </div>
