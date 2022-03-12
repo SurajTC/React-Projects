@@ -1,0 +1,15 @@
+@import "../styles/theme.scss";
+
+.pokemon {
+  margin-top: 2em;
+  text-transform: capitalize;
+}
+.pokemon--title {
+  display: inline;
+  padding: 0.125em 0.5em;
+  border-radius: 0.25em;
+  box-shadow: $shadow-1;
+  text-transform: capitalize;
+  color: $color-secondary;
+  background-color: $color-accent;
+}

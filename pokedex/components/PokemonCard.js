@@ -9,7 +9,6 @@ export default function PokemonCard({
   return (
     <Link href={"/" + name}>
       <a className={styles["pokemon--card"]} onClick={toggleLoading}>
-        <h3 className={styles["pokemon--name"]}>{name}</h3>
         <Image
           src={image}
           alt={name}
@@ -18,7 +17,7 @@ export default function PokemonCard({
           layout="responsive"
           priority="true"
         />
-        <h3 className={styles["pokemon--name"]}>Read More</h3>
+        <h3 className={styles["pokemon--name"]}>{name}</h3>
       </a>
     </Link>
   )

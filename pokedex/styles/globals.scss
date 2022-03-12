@@ -2,9 +2,9 @@
 
 html,
 body {
-  color: $color-fg-primary;
-  background-color: $color-bg-primary;
-  
+  color: $color-secondary;
+  background-color: $color-primary;
+
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -19,49 +19,56 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
-.pokeman{
+.pokeman {
   display: grid;
 
-  img{
+  img {
     height: 8em;
   }
-  h2{
+  h2 {
     text-transform: capitalize;
   }
 }
-.grid-container{
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  // place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 2em 1em;
-  // grid-template-columns: repeat(2, minmax(.5fr, 1fr));
 }
-.container{
+.container {
   min-width: 320px;
   max-width: 1160px;
   margin-inline: auto;
   padding-inline: 1em;
-
 }
-.loader{
+.loader {
   width: 100%;
-  height: .25rem;
-  background-color: $color-fg-primary;
+  height: 0.25rem;
+  background-color: $color-secondary;
   position: fixed;
   top: 0;
+  z-index: 99;
   transition: background-color 50ms ease-in-out;
 }
-.loading{
+.loading {
   animation: load 500ms linear infinite alternate;
   @keyframes load {
-    from{
-      background-color: $color-fg-primary;
+    from {
+      background-color: $color-secondary;
     }
-    to{
-      background-color: $color-fg-secondary;
+    to {
+      background-color: $color-accent;
     }
-    
   }
+}
+.topbar {
+  text-align: center;
+  padding-block: 0.25em .5em;
+  position: sticky;
+  top: 0;
+  z-index: 88;
+  color: $color-primary;
+  background-color: $color-secondary;
+  box-shadow: $shadow-1;
 }
 // #ffffff
 // #FF0000

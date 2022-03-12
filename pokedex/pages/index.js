@@ -9,13 +9,13 @@ export default function Home({ pokemon, toggleLoading }) {
   if (pokemon === undefined) {
     return (
       <div className="container">
-        <h1>Falied to Load Data</h1>
+        <h2>Falied to Load Data</h2>
       </div>
     )
   }
   return (
     <div className="container">
-      <h1>Found {pokemon.count} results </h1>
+      <h2>Found {pokemon.count} results </h2>
       <section className="grid-container">
         {pokemon.results.map((pokemon, index) => {
           return (
@@ -45,13 +45,6 @@ export async function getStaticProps() {
       })
       return data
     })
-  // const pokemon = await response.json()
-  // const images = await pokemon.results.map((pokeman) => {
-  //   return (
-  //     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-  //     pokeman.url.split("/").slice(-2, -1)[0].concat(".png")
-  //   )
-  // })
   return {
     props: {
       pokemon: pokemon,

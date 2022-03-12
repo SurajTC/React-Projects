@@ -1,59 +1,13 @@
+import PokemonDetails from "@components/PokemonDetails"
 import Image from "next/image"
-import { useRouter } from "next/router"
 import { useEffect } from "react"
 
 export default function Pokemon({ response, toggleLoading }) {
-  const router = useRouter()
   useEffect(() => toggleLoading(), [response])
 
   return (
     <div className="container">
-      <h1>Pokemon {response.name}</h1>
-      <table>
-        <tbody>
-          <tr>
-            <td>Name</td>
-            <td>:</td>
-            <td>{response.name}</td>
-          </tr>
-          <tr>
-            <td>Experience</td>
-            <td>:</td>
-            <td>{response.experience}</td>
-          </tr>
-          <tr>
-            <td>Height</td>
-            <td>:</td>
-            <td>{response.height}</td>
-          </tr>
-          <tr>
-            <td>Weight</td>
-            <td>:</td>
-            <td>{response.weight}</td>
-          </tr>
-        </tbody>
-      </table>
-      <h2>Abilities</h2>
-      <div>
-        {response.abilities.map((ability, index) => {
-          return <span key={index}>{ability}</span>
-        })}
-      </div>
-      <Image
-        src={response.sprite}
-        alt={response.name}
-        width={100}
-        height={100}
-        layout="intrinsic"
-      />
-      <button
-        onClick={() => {
-          router.back()
-          toggleLoading()
-        }}
-      >
-        Back
-      </button>
+      <PokemonDetails response={response} toggleLoading={toggleLoading} />
     </div>
   )
 }
